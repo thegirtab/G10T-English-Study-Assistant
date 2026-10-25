@@ -1,0 +1,13 @@
+{
+  "name": "english-loop",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Local-first English learning loop",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=24"
+  }
+}

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>English Loop · 英语学习闭环</title>
+<link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+
+<aside class="rail">
+  <div class="rail-top">
+    <div class="monogram">E</div>
+    <div class="rail-name">ENGLISH<br>LOOP</div>
+  </div>
+  <nav class="rail-nav" id="rail-nav">
+    <a href="#/today" data-view="today"><span class="n">01</span><span class="t">今日</span></a>
+    <a href="#/inbox" data-view="inbox"><span class="n">02</span><span class="t">材料</span></a>
+    <a href="#/review" data-view="review"><span class="n">03</span><span class="t">复习</span></a>
+    <a href="#/writing" data-view="writing"><span class="n">04</span><span class="t">写作</span></a>
+    <a href="#/tests" data-view="tests"><span class="n">05</span><span class="t">测试</span></a>
+    <a href="#/stats" data-view="stats"><span class="n">06</span><span class="t">统计</span></a>
+    <a href="#/settings" data-view="settings"><span class="n">07</span><span class="t">设置</span></a>
+  </nav>
+  <div class="rail-foot"><span>LOCAL ONLY</span><span>v0.1</span></div>
+</aside>
+
+<main class="stage">
+  <div class="topline">
+    <div class="topline-left">
+      <span class="live-dot"></span>
+      <span id="top-day">—</span>
+      <span class="sep">/</span>
+      <span id="top-streak">—</span>
+    </div>
+    <div class="topline-right">
+      <button class="btn btn--ghost btn--sm" id="btn-backup">立即备份</button>
+      <button class="btn btn--ink btn--sm" id="btn-capture">+ 收集 <kbd>Ctrl K</kbd></button>
+    </div>
+  </div>
+  <div id="view" class="view"></div>
+</main>
+
+<!-- 快速收集 -->
+<div class="modal" id="capture-modal" hidden>
+  <div class="modal-backdrop" data-close></div>
+  <div class="modal-panel" role="dialog" aria-modal="true" aria-label="快速收集">
+    <div class="modal-head">
+      <div>
+        <div class="eyebrow">QUICK CAPTURE</div>
+        <h2 class="modal-title">捡到什么，就存什么</h2>
+      </div>
+      <button class="icon-btn" data-close aria-label="关闭">✕</button>
+    </div>
+    <textarea id="cap-content" class="big-input" rows="3" placeholder="一句话、一个词、一个搭配……" autocomplete="off"></textarea>
+    <div class="field-row">
+      <label class="field">
+        <span class="lbl">类型</span>
+        <select id="cap-type">
+          <option value="word">单词</option>
+          <option value="phrase">短语搭配</option>
+          <option value="expression">地道表达</option>
+          <option value="sentence">整句</option>
+          <option value="grammar">语法点</option>
+        </select>
+      </label>
+      <label class="field">
+        <span class="lbl">来源</span>
+        <select id="cap-source">
+          <option value="show">剧集</option>
+          <option value="course">网课</option>
+          <option value="dict">词典</option>
+          <option value="reading">阅读</option>
+          <option value="podcast">播客</option>
+          <option value="other">其他</option>
+        </select>
+      </label>
+    </div>
+    <div class="field-row">
+      <label class="field"><span class="lbl">来源名称</span><input id="cap-source-name" placeholder="The Bear S02E03"></label>
+      <label class="field"><span class="lbl">位置</span><input id="cap-locator" placeholder="12:34 / 第 4 讲"></label>
+    </div>
+    <label class="field"><span class="lbl">原句语境</span><input id="cap-context" placeholder="It's late. Let's call it a day."></label>
+    <div class="modal-foot">
+      <span class="hint">Enter 保存 · Ctrl+Enter 保存并继续</span>
+      <button class="btn btn--verm" id="cap-save">存入收集箱</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast" hidden></div>
+<script type="module" src="/js/app.js"></script>
+</body>
+</html>

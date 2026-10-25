@@ -1,0 +1,11 @@
+# 本地数据（含 SQLite 数据库与明文 API Key，不要提交）
+data/
+
+# 依赖与日志
+node_modules/
+*.log
+npm-debug.log*
+
+# 系统文件
+.DS_Store
+Thumbs.db
